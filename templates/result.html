@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Recipe Result</title>
+    <meta charset="UTF-8">
+    <title>AI Recipe Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Your AI-Generated Recipe</h1>
+    <h1>Generated Recipe</h1>
 
-    <p>{{ recipe }}</p>
+    <div class=:"recipe-card">
+        {{ recipe }}
+    </div>
 
-    <br><br>
-    <a href="/">Generate Another</a>
+    <a href="/" style="color:#3498db; text-decoration:none; font-weight:bold;">Generate Another Recipe</a>
 </body>
 </html>

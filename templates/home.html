@@ -1,33 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>AI Recipe Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <h1>AI Recipe Generator</h1>
 
-    <form action="/generate" method="POST">
-        <label>Enter Ingredients (comma separated):</label><br>
-        <input type="text" name="ingredients" placeholder="egg, tomato, onion" required><br><br>
+    {% if error %}
+    <p style="color:red">{{ error }}</p>
+    {% endif %}
 
-        <label>Select Cuisine:</label><br>
+    <form method="POST" action="/generate" onsubmit="showLoading()">
+        <label>Ingredients (comma-separated):</label>
+        <input type="text" name="ingredients" placeholder="e.g., chicken, garlic, onion">
+
+        <label>Cuisine:</label>
         <select name="cuisine">
-            <option>Indian</option>
+            <option value="">Select Cuisine</option>
             <option>Italian</option>
+            <option>Indian</option>
             <option>Chinese</option>
-            <option>American</option>
-        </select><br><br>
+            <option>Mexican</option>
+            <option>French</option>
+        </select>
 
-        <label>Select Diet Type:</label><br>
+        <label>Diet Preference:</label>
         <select name="diet">
-            <option>Normal</option>
+            <option value="">Select Diet</option>
             <option>Vegetarian</option>
+            <option>Vegan</option>
             <option>Non-Vegetarian</option>
-            <option>High Protein</option>
-        </select><br><br>
+            <option>Keto</option>
+            <option>Paleo</option>
+        </select>
 
         <button type="submit">Generate Recipe</button>
     </form>
 
+    <div id="loading" style="display:none">Generating recipe, please wait...</div>
+
+    <script>
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+    </script>
 </body>
 </html>

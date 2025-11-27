@@ -1,0 +1,75 @@
+recipe_ai_project/
+│
+├─ app.py
+├─ .env
+├─ templates/
+│   ├─ home.html
+│   ├─ result.html
+│   └─ (optional) about.html, saved.html
+└─ static/
+    ├─ css/
+    │   └─ style.css
+    └─ images/ (optional)
+Current Status:
+
+Functional: ✅
+
+Flask app running
+
+Home page with form for ingredients, cuisine, diet
+
+Recipe generation working via Groq API (or OpenAI API)
+
+Result page shows recipe
+
+Input validation & error handling in place
+
+UI/UX: ✅ Phase 3 started
+
+Basic CSS added
+
+Dropdowns for cuisine & diet
+
+Loading message
+
+Recipe card with pre-wrap formatting
+
+Gradient background & hover animations
+
+Next Possible Enhancements:
+
+Additional Pages:
+
+About, Contact, Saved Recipes
+
+Save Recipes:
+
+Local JSON/text file or SQLite/DB
+
+User Accounts (optional)
+
+Download/Share Recipes
+
+Advanced UI:
+
+Responsive design, animations, AI dish images
+
+Current app.py Key Points:
+
+@app.route('/') → home page
+
+@app.route('/generate', methods=['POST']) → recipe generation
+
+Uses .env for API key (GROQ_API_KEY)
+
+Try-except around API call to handle errors
+
+Returns result.html with recipe content
+
+Next Steps:
+
+Complete UI enhancements (colors, transitions, responsiveness)
+
+Optional: Save recipes feature
+
+Optional: Add multi-page navigation & user login
